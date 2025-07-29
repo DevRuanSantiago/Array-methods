@@ -87,3 +87,5 @@ const letters = arr.concat(arr2);
 console.log(letters)
 console.log(letters.join(`-`))
 */
+const arr = [ 23,11,64];
+console.log(arr.at(1))
