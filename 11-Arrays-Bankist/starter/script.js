@@ -74,6 +74,7 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+/*
 const arr = [`a`,`b`, `c`,`d`,`e`]
 console.log(arr.slice(1))
 arr.slice(1)
@@ -85,3 +86,4 @@ console.log(arr2)
 const letters = arr.concat(arr2);
 console.log(letters)
 console.log(letters.join(`-`))
+*/
