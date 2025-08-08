@@ -61,20 +61,30 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const DisplayMoviment = function(movements){
-  movements.foreach(function(mov,i){
+const DisplayMoviment = function (movements) {
+  containerMovements.innerHTML = ''; // limpa antes
+
+  movements.forEach(function (mov, i) {
+    // Classe CSS correta
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    // Texto que vai ser exibido na tela
+    const text = mov > 0 ? 'deposited' : 'withdrew';
+
     const html = `
-    <div class="movements__row">
-          <div class="movements__type movements__type--deposit">2 deposit</div>
-          <div class="movements__date">3 days ago</div>
-          <div class="movements__value">4 000€</div>
-        </div>` 
-        `
+      <div class="movements__row">
+        <div class="movements__type movements__type--${type}">
+          ${i + 1} ${text}
+        </div>
+        <div class="movements__date">3 days ago</div>
+        <div class="movements__value">${mov}€</div>
+      </div>
+    `;
 
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
 
-  })
-
-}
 DisplayMoviment(account1.movements);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
